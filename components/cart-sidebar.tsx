@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { useCart } from "@/contexts/cart-context"
 import { toast } from "@/hooks/use-toast"
+import { useRouter } from "next/navigation"
 
 interface CartSidebarProps {
   isOpen: boolean
@@ -14,13 +15,15 @@ interface CartSidebarProps {
 
 export function CartSidebar({ isOpen, onClose }: CartSidebarProps) {
   const { items, updateQuantity, removeFromCart, getTotalPrice, clearCart } = useCart()
+  const router = useRouter();
 
   const handleCheckout = () => {
     toast({
       title: "Proceeding to Checkout",
       description: "Redirecting to secure payment page...",
-    })
-    // Implement checkout logic here
+    });
+    onClose();
+    router.push("/checkout");
   }
 
   return (

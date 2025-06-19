@@ -1,8 +1,7 @@
 "use client"
 
 import type React from "react"
-
-import { useRef } from "react"
+import { useRef, useState, useEffect } from "react"
 import { motion } from "framer-motion"
 
 interface SparkleProps {
@@ -12,15 +11,27 @@ interface SparkleProps {
 
 export function SparkleEffect({ className = "", density = 20 }: SparkleProps) {
   const containerRef = useRef<HTMLDivElement>(null)
+  const [sparkles, setSparkles] = useState<{
+    id: number
+    x: number
+    y: number
+    size: number
+    delay: number
+    duration: number
+  }[]>([])
 
-  const sparkles = Array.from({ length: density }, (_, i) => ({
-    id: i,
-    x: Math.random() * 100,
-    y: Math.random() * 100,
-    size: Math.random() * 4 + 2,
-    delay: Math.random() * 3,
-    duration: Math.random() * 2 + 2,
-  }))
+  useEffect(() => {
+    const generated = Array.from({ length: density }, (_, i) => ({
+      id: i,
+      x: Math.random() * 100,
+      y: Math.random() * 100,
+      size: Math.random() * 4 + 2,
+      delay: Math.random() * 3,
+      duration: Math.random() * 2 + 2,
+    }))
+    setSparkles(generated)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [density])
 
   return (
     <div ref={containerRef} className={`absolute inset-0 overflow-hidden pointer-events-none ${className}`}>

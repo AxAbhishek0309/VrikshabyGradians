@@ -14,7 +14,7 @@ const testimonials = [
     location: "New York, USA",
     rating: 5,
     text: "Absolutely love my plants from Vriksha! The quality is exceptional and they arrived in perfect condition. My home feels so much more alive now.",
-    image: "/placeholder.svg?height=80&width=80",
+    image: "https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=facearea&w=80&h=80&facepad=2&q=80",
     purchase: "Monstera Deliciosa",
   },
   {
@@ -23,7 +23,7 @@ const testimonials = [
     location: "Mumbai, India",
     rating: 5,
     text: "वृक्षा से मिले पौधे बहुत ही बेहतरीन हैं। घर में हरियाली आ गई है और हवा भी साफ लगती है। बहुत खुश हूं!",
-    image: "/placeholder.svg?height=80&width=80",
+    image: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=facearea&w=80&h=80&facepad=2&q=80",
     purchase: "Snake Plant Collection",
   },
   {
@@ -32,7 +32,7 @@ const testimonials = [
     location: "Barcelona, Spain",
     rating: 5,
     text: "Las plantas llegaron perfectas y el servicio al cliente es excepcional. Definitivamente volveré a comprar aquí.",
-    image: "/placeholder.svg?height=80&width=80",
+    image: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=facearea&w=80&h=80&facepad=2&q=80",
     purchase: "Peace Lily",
   },
   {
@@ -41,7 +41,7 @@ const testimonials = [
     location: "Toronto, Canada",
     rating: 5,
     text: "The care instructions were so helpful! My plants are thriving and I've learned so much about plant care. Highly recommend Vriksha.",
-    image: "/placeholder.svg?height=80&width=80",
+    image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=facearea&w=80&h=80&facepad=2&q=80",
     purchase: "Fiddle Leaf Fig",
   },
   {
@@ -50,7 +50,7 @@ const testimonials = [
     location: "London, UK",
     rating: 5,
     text: "Fast delivery, beautiful packaging, and healthy plants. The whole experience was delightful from start to finish.",
-    image: "/placeholder.svg?height=80&width=80",
+    image: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=facearea&w=80&h=80&facepad=2&q=80",
     purchase: "Pothos Collection",
   },
 ]
