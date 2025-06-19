@@ -1,20 +1,46 @@
-# Vriksha e-commerce
+🌿 Vriksha - Curated Plant Store (by Gradians)
+Live Demo: https://vriksha-nine.vercel.app
 
-*Automatically synced with your [v0.dev](https://v0.dev) deployments*
+📦 Project Overview
+Vriksha is a modern, beautifully designed e-commerce platform for curated plants. Built with a focus on exceptional UI/UX, dynamic visual effects, and smooth user interaction to provide customers with an immersive shopping experience.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/abhishekpersonal1903-2118s-projects/v0-vriksha-e-commerce)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/VjhF2gJK6Nc)
+This project was built as part of the BrandIT 2.0 Hackathon 2025.
 
-## Overview
+🚀 Key Features
+✅ Fully responsive Next.js 15 frontend
 
-This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
+✅ TailwindCSS powered design with Framer Motion animations
 
-## Deployment
+✅ Light & Dark theme toggle
 
-Your project is live at:
+✅ Multilingual support (demo setup)
 
-https://vriksha-nine.vercel.app 
+✅ Sparkling star background & hover animations
+
+✅ Live 3D Plant visualizations (Three.js integration)
+
+✅ Integrated AI-powered chatbot (OpenAI/Gemini support)
+
+✅ Authentication via Google OAuth (NextAuth.js)
+
+✅ Smooth hover, transition, and micro-interactions for delightful UX
+
+🛠 Tech Stack
+Frontend: Next.js 15, React 19, TailwindCSS, Framer Motion
+
+Animations: Framer Motion, Three.js, @react-three/fiber, Lucide Icons
+
+3D Visuals: Three.js + Spline placeholders
+
+Auth: NextAuth.js with Google OAuth
+
+AI Chat: OpenAI/Gemini API integrated chatbot
+
+Deployment: Vercel
+
+Design System: Radix UI, ShadCN, Emotion
+
+
 
 
 
