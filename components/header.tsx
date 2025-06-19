@@ -19,6 +19,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { useCart } from "@/contexts/cart-context"
 import { CartSidebar } from "@/components/cart-sidebar"
+import { useRouter } from "next/navigation"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -27,6 +28,7 @@ export function Header() {
   const { user, signOut, isAuthenticated } = useAuth()
   const { getTotalItems } = useCart()
   const [isCartOpen, setIsCartOpen] = useState(false)
+  const router = useRouter()
 
   const languages = [
     { code: "en", name: "English", flag: "🇺🇸" },
@@ -37,6 +39,14 @@ export function Header() {
     { code: "ja", name: "日本語", flag: "🇯🇵" },
     { code: "ar", name: "العربية", flag: "🇸🇦" },
   ]
+
+  // Scroll to footer if on homepage
+  const handleContactClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    if (window.location.pathname === "/") {
+      e.preventDefault()
+      document.querySelector("footer")?.scrollIntoView({ behavior: "smooth" })
+    }
+  }
 
   return (
     <motion.header
@@ -68,15 +78,16 @@ export function Header() {
             >
               {t("categories")}
             </a>
-            <a
-              href="#about"
+            <Link
+              href="/about"
               className="text-gray-700 dark:text-gray-300 hover:text-vriksha-green dark:hover:text-green-400 transition-colors"
             >
               {t("about")}
-            </a>
+            </Link>
             <a
               href="#contact"
               className="text-gray-700 dark:text-gray-300 hover:text-vriksha-green dark:hover:text-green-400 transition-colors"
+              onClick={handleContactClick}
             >
               {t("contact")}
             </a>
@@ -211,15 +222,16 @@ export function Header() {
               >
                 {t("categories")}
               </a>
-              <a
-                href="#about"
+              <Link
+                href="/about"
                 className="text-gray-700 dark:text-gray-300 hover:text-vriksha-green dark:hover:text-green-400 transition-colors"
               >
                 {t("about")}
-              </a>
+              </Link>
               <a
                 href="#contact"
                 className="text-gray-700 dark:text-gray-300 hover:text-vriksha-green dark:hover:text-green-400 transition-colors"
+                onClick={handleContactClick}
               >
                 {t("contact")}
               </a>

@@ -54,7 +54,7 @@ User's question: ${message}`
           status: "ai",
           hasImage: !!image,
         })
-      } catch (error) {
+      } catch (error: any) {
         console.log("Google Gemini API failed:", error.message)
         // Continue to try OpenAI
       }
@@ -107,7 +107,7 @@ User's question: ${message}`
           status: "ai",
           hasImage: !!image,
         })
-      } catch (error) {
+      } catch (error: any) {
         console.log("OpenAI API failed:", error.message)
         // Continue to fallback
       }

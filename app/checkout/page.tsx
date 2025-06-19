@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useCart } from "../../contexts/cart-context";
 import { Button } from "../../components/ui/button";
 import { Input } from "../../components/ui/input";
@@ -8,6 +8,10 @@ import { Separator } from "../../components/ui/separator";
 import { ParticleBackground } from "../../components/particle-background";
 import { Plant3D } from "../../components/plant-3d";
 import { motion } from "framer-motion";
+
+// To use Razorpay, add the following to your .env.local file:
+// NEXT_PUBLIC_RAZORPAY_KEY_ID=your_key_id_here
+// RAZORPAY_SECRET=your_secret_here (for backend use only)
 
 const CheckoutPage = () => {
   const {
@@ -28,14 +32,61 @@ const CheckoutPage = () => {
   const [orderPlaced, setOrderPlaced] = useState(false);
   const [showCheckout, setShowCheckout] = useState(false);
 
+  // Get Razorpay Key ID from environment variable
+  const RAZORPAY_KEY_ID = process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID;
+
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://checkout.razorpay.com/v1/checkout.js";
+    script.async = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const handlePlaceOrder = (e: React.FormEvent) => {
     e.preventDefault();
-    setOrderPlaced(true);
-    clearCart();
+
+    if (!RAZORPAY_KEY_ID) {
+      alert("Razorpay Key ID is not set. Please add NEXT_PUBLIC_RAZORPAY_KEY_ID to your .env.local file.");
+      return;
+    }
+
+    // Razorpay payment options
+    const options = {
+      key: RAZORPAY_KEY_ID, // <-- Loaded from .env.local
+      amount: getTotalPrice() * 100, // Amount in paise
+      currency: "INR",
+      name: "Vriksha",
+      description: "Plant Order",
+      image: "/logo.png",
+      handler: function (response: any) {
+        // Payment successful
+        setOrderPlaced(true);
+        clearCart();
+        // Optionally, send response.razorpay_payment_id to your backend for verification
+      },
+      prefill: {
+        name: form.name,
+        email: form.email,
+        contact: form.phone,
+      },
+      notes: {
+        address: form.address,
+      },
+      theme: {
+        color: "#4CAF50",
+      },
+    };
+
+    // @ts-ignore
+    const rzp = new window.Razorpay(options);
+    rzp.open();
   };
 
   return (
@@ -61,6 +112,9 @@ const CheckoutPage = () => {
           >
             <h2 className="text-2xl font-bold mb-4 text-vriksha-green">Thank you for your order!</h2>
             <p>We have received your order and will process it soon.</p>
+            <Button className="mt-8" onClick={() => window.location.href = "/"}>
+              Home
+            </Button>
           </motion.div>
         ) : items.length === 0 ? (
           <p className="text-center text-lg">Your cart is empty.</p>
