@@ -14,7 +14,7 @@ const testimonials = [
     location: "New York, USA",
     rating: 5,
     text: "Absolutely love my plants from Vriksha! The quality is exceptional and they arrived in perfect condition. My home feels so much more alive now.",
-    image: "/placeholder.svg?height=80&width=80",
+    image: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     purchase: "Monstera Deliciosa",
   },
   {
@@ -23,7 +23,7 @@ const testimonials = [
     location: "Mumbai, India",
     rating: 5,
     text: "वृक्षा से मिले पौधे बहुत ही बेहतरीन हैं। घर में हरियाली आ गई है और हवा भी साफ लगती है। बहुत खुश हूं!",
-    image: "/placeholder.svg?height=80&width=80",
+    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     purchase: "Snake Plant Collection",
   },
   {
@@ -32,7 +32,7 @@ const testimonials = [
     location: "Barcelona, Spain",
     rating: 5,
     text: "Las plantas llegaron perfectas y el servicio al cliente es excepcional. Definitivamente volveré a comprar aquí.",
-    image: "/placeholder.svg?height=80&width=80",
+    image: "https://images.unsplash.com/photo-1514626585111-9aa86183ac98?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     purchase: "Peace Lily",
   },
   {
@@ -41,7 +41,7 @@ const testimonials = [
     location: "Toronto, Canada",
     rating: 5,
     text: "The care instructions were so helpful! My plants are thriving and I've learned so much about plant care. Highly recommend Vriksha.",
-    image: "/placeholder.svg?height=80&width=80",
+    image: "https://images.unsplash.com/photo-1587397845856-e6cf49176c70?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     purchase: "Fiddle Leaf Fig",
   },
   {
@@ -50,7 +50,7 @@ const testimonials = [
     location: "London, UK",
     rating: 5,
     text: "Fast delivery, beautiful packaging, and healthy plants. The whole experience was delightful from start to finish.",
-    image: "/placeholder.svg?height=80&width=80",
+    image: "https://images.unsplash.com/photo-1521146764736-56c929d59c83?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     purchase: "Pothos Collection",
   },
 ]

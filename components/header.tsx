@@ -170,12 +170,16 @@ export function Header() {
                 </DropdownMenuContent>
               </DropdownMenu>
             ) : (
-              <div className="hidden sm:flex items-center space-x-2">
+              <div className="flex items-center space-x-2">
                 <Link href="/auth/signin">
-                  <Button variant="ghost">{t("signIn")}</Button>
+                  <Button variant="outline" className="border-vriksha-green text-vriksha-green hover:bg-vriksha-green/10">
+                    {t("signIn")}
+                  </Button>
                 </Link>
                 <Link href="/auth/signup">
-                  <Button className="bg-vriksha-green hover:bg-vriksha-green/90">{t("signUp")}</Button>
+                  <Button className="bg-vriksha-green hover:bg-vriksha-green/90 text-white">
+                    {t("signUp")}
+                  </Button>
                 </Link>
               </div>
             )}
