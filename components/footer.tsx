@@ -113,21 +113,21 @@ export function Footer() {
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <MapPin className="h-5 w-5 text-green-400 flex-shrink-0" />
-                <span className="text-gray-300">123 Green Street, Plant City, PC 12345</span>
+                <span className="text-gray-300">MUJ Bagru Dahmi-kalan, Rajasthan, India</span>
               </div>
               <a
-                href="tel:+918542986911"
+                href="tel:+919876543210"
                 className="flex items-center space-x-3 hover:text-green-400 transition-colors"
               >
                 <Phone className="h-5 w-5 text-green-400 flex-shrink-0" />
-                <span className="text-gray-300">+91 8542986911</span>
+                <span className="text-gray-300">+91 9876543210</span>
               </a>
               <a
-                href="mailto:auxinbiotek1986@gmail.com"
+                href="mailto:teamgradians@gmail.com"
                 className="flex items-center space-x-3 hover:text-green-400 transition-colors"
               >
                 <Mail className="h-5 w-5 text-green-400 flex-shrink-0" />
-                <span className="text-gray-300">auxinbiotek1986@gmail.com</span>
+                <span className="text-gray-300">teamgradians@gmail.com</span>
               </a>
             </div>
           </motion.div>
@@ -139,10 +139,11 @@ export function Footer() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.4 }}
-          className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center"
+          className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
         >
-          <p className="text-gray-400 text-sm">© 2024 Vriksha. All rights reserved.</p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
+          <p className="text-gray-400 text-sm">© 2025 Vriksha. All rights reserved.</p>
+          <span className="text-green-400 text-sm font-semibold text-center">Made with <span className="inline-block align-middle text-red-500">♥</span> by Team Gradians</span>
+          <div className="flex space-x-6 mt-0 md:mt-0">
             <a href="#" className="text-gray-400 hover:text-green-400 text-sm transition-colors">
               Privacy Policy
             </a>

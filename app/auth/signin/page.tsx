@@ -64,50 +64,35 @@ export default function SignInPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-amber-50 dark:from-green-950 dark:via-gray-900 dark:to-amber-950 flex items-center justify-center p-4 relative overflow-hidden">
-      {/* Background sparkles */}
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-green-50 via-white to-amber-50 dark:from-green-950 dark:via-gray-900 dark:to-amber-950 p-4 relative overflow-hidden">
       <SparkleEffect density={30} className="fixed inset-0" />
-
-      {/* Floating orbs */}
       <motion.div
         className="fixed top-20 left-20 w-32 h-32 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-xl"
-        animate={{
-          x: [0, 100, 0],
-          y: [0, -50, 0],
-          scale: [1, 1.2, 1],
-        }}
+        animate={{ x: [0, 100, 0], y: [0, -50, 0], scale: [1, 1.2, 1] }}
         transition={{ duration: 8, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
       />
       <motion.div
         className="fixed bottom-20 right-20 w-40 h-40 bg-gradient-to-r from-pink-400/20 to-yellow-400/20 rounded-full blur-xl"
-        animate={{
-          x: [0, -80, 0],
-          y: [0, 60, 0],
-          scale: [1, 0.8, 1],
-        }}
+        animate={{ x: [0, -80, 0], y: [0, 60, 0], scale: [1, 0.8, 1] }}
         transition={{ duration: 10, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut", delay: 2 }}
       />
-
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="w-full max-w-md relative z-10"
+        className="w-full max-w-md relative z-10 flex flex-col items-center"
       >
-        {/* Back to Home */}
         <Link href="/">
           <MagneticButton
             variant="ghost"
-            className="mb-6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 bg-white/50 backdrop-blur-sm"
+            className="mb-8 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 bg-white/50 backdrop-blur-sm"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back to Home
           </MagneticButton>
         </Link>
-
         <FloatingSparkles>
           <motion.div whileHover={{ y: -5 }} transition={{ type: "spring", stiffness: 300, damping: 30 }}>
-            <Card className="shadow-2xl border-0 backdrop-blur-sm bg-white/90 dark:bg-gray-900/90 overflow-hidden relative">
-              {/* Card glow effect */}
+            <Card className="shadow-2xl border-0 backdrop-blur-sm bg-white/90 dark:bg-gray-900/90 overflow-hidden relative px-6 py-8">
               <motion.div
                 className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 rounded-lg"
                 animate={{
@@ -119,7 +104,6 @@ export default function SignInPage() {
                 }}
                 transition={{ duration: 5, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
               />
-
               <CardHeader className="text-center pb-8 relative z-10">
                 <motion.div
                   className="flex items-center justify-center mb-4"
@@ -148,9 +132,7 @@ export default function SignInPage() {
                   Sign in to your Vriksha account
                 </motion.p>
               </CardHeader>
-
               <CardContent className="space-y-6 relative z-10">
-                {/* Google Sign In */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -158,7 +140,6 @@ export default function SignInPage() {
                   className="space-y-4"
                 >
                   <GoogleSignInButton size="lg" className="w-full h-14 text-lg font-medium" />
-
                   <div className="relative">
                     <div className="absolute inset-0 flex items-center">
                       <Separator className="w-full" />
@@ -170,7 +151,6 @@ export default function SignInPage() {
                     </div>
                   </div>
                 </motion.div>
-
                 <motion.form
                   onSubmit={handleSubmit}
                   className="space-y-6"
@@ -183,7 +163,7 @@ export default function SignInPage() {
                     type="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="demo@vriksha.com"
+                    placeholder=""
                     label={t("email")}
                     error={errors.email}
                     icon={<Mail className="h-4 w-4" />}
@@ -195,7 +175,7 @@ export default function SignInPage() {
                       type={showPassword ? "text" : "password"}
                       value={formData.password}
                       onChange={handleChange}
-                      placeholder="password123"
+                      placeholder=""
                       label={t("password")}
                       error={errors.password}
                       icon={<Lock className="h-4 w-4" />}
